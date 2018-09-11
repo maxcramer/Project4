@@ -12,6 +12,12 @@ class Header extends React.Component {
     this.setState({ toggleNav: toggle });
   };
 
+  handleLogout = () => {
+    Auth.removeToken();
+    this.props.history.push('/login');
+  }
+
+
 
   // toggleNav = () => {
   //   const burger = document.getElementsByClassName('navbar-burger')[0];
@@ -54,9 +60,9 @@ class Header extends React.Component {
                   <div className="navbar-item">
                     <Link className="navbar-item" to="/events/new">Create Event</Link>
                   </div>
-                  {Auth.isAuthenticated &&
+                  {Auth.isAuthenticated() &&
                   <div className="navbar-item">
-                    <Link className="navbar-item" to={`/user/${Auth.currentUserId()}`}>Profile</Link>
+                    <Link className="navbar-item" to={`/users/${Auth.currentUserId()}`}>Profile</Link>
                   </div>
                   }
                   <div className="navbar-item">

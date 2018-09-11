@@ -10,7 +10,7 @@ const commentsController = require('../controllers/commentsController');
 const tagsController = require('../controllers/tagsController');
 const eventController = require('../controllers/eventController');
 const userController = require('../controllers/userController');
-// const secureRoutes = require('../lib/secureRoutes');
+const secureRoutes = require('../lib/secureRoutes');
 
 
 
@@ -40,13 +40,18 @@ Router.route('/users/:userId/journeys')
 Router.route('/users/:userId/journeys/:journeyId')
   .delete(journeysController.indexByUserDelete);
 
+// FOLLOW REQUEST
+Router.route('/users/:id/followers')
+  .post(secureRoutes, userController.addFollower);
+
 // USER CONTROL (FOLLOWING FUNCTIONS)
 Router.route('/users')
   .get(userController.index);
 Router.route('/users/:id')
   .get(userController.show)
-  .put(userController.addFollower)
+  .put(userController.update)
   .delete(userController.delete);
+
 
 // TAGS
 Router.route('/users/:userId/tags')

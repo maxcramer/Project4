@@ -5,9 +5,7 @@ import Flash from '../../lib/Flash';
 
 class AuthLogin extends React.Component {
   state = {
-    passwordHidden: true,
-    email: 'max@email.com',
-    password: 'pass'
+    passwordHidden: true
   }
 
   handleSubmit = event => {

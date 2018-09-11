@@ -17,25 +17,34 @@ class UsersShow extends React.Component {
       .then(() => this.props.history.push('/user'));
   }
 
+  handleFollow = () => {
+    axios.post(`/api/users/${this.props.match.params.id}/followers`)
+      .then(res => this.setState({ user: res.data }, () => console.log('These are the followers', res.data)));
+  }
+
 
   render() {
-    console.log(this.state.user);
+    // console.log('Console log is',  Auth.currentUserId());
+    // console.log('This is the state', this.state.user);
+    // console.log('We are the logged in user', Auth.currentUserId() === this.state.user.id);
     const user = this.state.user;
     return (
       <section>
         {user &&
-          <h1>
-            {this.state.currentUserId === this.state.user.id &&
             <div className="has-text-centered">
               <img src={user.profileImg} />
-              <p className="title is-2">{user.email}</p>
+              <p>Followers: {user.followers.length}</p>
+              <p>Following: {user.following.length}</p>
+
               <p className="title is-2">{user.username}</p>
+              <p className="title is-2">{user.email}</p>
               <p className="has-text-centered">{user.boardType}</p>
               <img src={user.boardImg} />
               <p className="has-text-centered">{user.ridingStyle}</p>
               {user.boardMods.map((mod) =>
                 <p key={mod._id} className="has-text-centered">{mod.tagname}</p>
-              ) }
+              )}
+              {Auth.currentUserId() === user._id.toString() &&
               <div className="columns buttons">
                 <div className="column is-half">
                   <Link to={`/users/${user._id}/edit`} className="button is-warning is-rounded is-outlined">Edit</Link>
@@ -44,34 +53,13 @@ class UsersShow extends React.Component {
                   <button onClick={this.handleDelete} className="button is-danger is-rounded is-outlined">Delete</button>
                 </div>
               </div>
+              }
+              {Auth.currentUserId() !== user._id.toString() &&
+                <div className="column is-half">
+                  <button onClick={this.handleFollow} className="button is-danger is-rounded is-outlined">Follow</button>
+                </div>
+              }
             </div>
-            }
-            {!Auth.isAuthenticated() && this.state.currentUserId === this.state.user.id &&
-                  <div className="has-text-centered">
-                    <img src={user.profileImg}/>
-                    <p className="title is-2">{user.email}</p>
-                    <p className="title is-2">{user.username}</p>
-                    <p className="has-text-centered">{user.boardType}</p>
-                    <img src={user.boardImg} />
-                    <p className="has-text-centered">{user.ridingStyle}</p>
-                    {user.boardMods.map((mod) =>
-                      <p key={mod._id} className="has-text-centered">{mod.tagname}</p>
-                    ) }
-                    <div className="columns buttons">
-                      <div className="column is-half">
-                        <Link to={`/users/${user._id}/edit`} className="button is-warning is-rounded is-outlined">Edit</Link>
-                      </div>
-                      <div className="column is-half">
-                        <button onClick={this.follow} className="button is-danger is-rounded is-outlined">Follow</button>
-                      </div>
-                      <div className="column is-half">
-                        <button onClick={this.handleDelete} className="button is-danger is-rounded is-outlined">Delete</button>
-                      </div>
-                    </div>
-                  </div>
-
-            }
-          </h1>
         }
       </section>
     );

@@ -10,6 +10,8 @@ import SecureRoute from './components/common/SecureRoute';
 import Header from './components/Header';
 import AuthLogin from './components/auth/Login';
 import AuthRegister from './components/auth/Register';
+import UsersIndex from './components/users/Index';
+import UsersEdit from './components/users/Edit';
 import UsersShow from './components/users/Show';
 import JourneysIndex from './components/journeys/Index';
 import EventsIndex from './components/events/Index';
@@ -30,7 +32,9 @@ class App extends React.Component {
         <Switch>
           <Route exact path="/login" component={AuthLogin} />
           <Route exact path="/register" component={AuthRegister} />
-          <Route path="/user/:id" component={UsersShow} />
+          <Route path="/users/:id/edit" component={UsersEdit} />
+          <Route path="/users/:id" component={UsersShow} />
+          <Route path ="/users" component = {UsersIndex} />
           <Route exact path="/events" component={EventsIndex} />
           <Route exact path="/journeys" component={JourneysIndex} />
           <Route path="/journeys/new" component={JourneysNew} />

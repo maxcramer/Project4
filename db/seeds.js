@@ -42,7 +42,7 @@ const eventData = [
 const userData = [
   {
     email: 'max@email.com',
-    userame: 'max',
+    username: 'max',
     password: 'pass',
     profileImg: 'https://media.licdn.com/dms/image/C4D03AQFvQx1ZhFlX7Q/profile-displayphoto-shrink_200_200/0?e=1541635200&v=beta&t=WmMvV5beHl5LGZCe1mLdyPrn0ZVKmccfrauRl_Olz7A',
     boardType: 'OneWheel XR',

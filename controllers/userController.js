@@ -1,17 +1,17 @@
 const User = require('../models/user');
 
 function userFollower(req, res, next) {
-  User.findById(req.params.userId)
+  User.findById(req.params.id)
     .then(user => {
       console.log(user);
-      user.followers.push(req.currentUser._id);
+      user.followers.push(req.currentUser.id);
       return user.save();
     })
     .then(user => {
       User
-        .findById(req.currentUser._id)
+        .findById(req.currentUser.id)
         .then( user => {
-          user.following.push(req.params.userId);
+          user.following.push(req.params.id);
           return user.save();
         });
       return user;
@@ -34,6 +34,14 @@ function userShow(req, res, next) {
     .catch(next);
 }
 
+function userUpdate(req, res, next) {
+  User.findById(req.params.id)
+    .then(user => user.set(req.body))
+    .then(user => user.save())
+    .then(user => res.json(user))
+    .catch(next);
+}
+
 function userDelete(req, res, next) {
   User.findById(req.params.userId)
     .then(user => user.remove())
@@ -44,6 +52,7 @@ function userDelete(req, res, next) {
 module.exports = {
   index: userIndex,
   show: userShow,
+  update: userUpdate,
   addFollower: userFollower,
   delete: userDelete
 };
