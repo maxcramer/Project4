@@ -41,7 +41,6 @@ class EventsIndex extends React.Component {
                 </Link>
               </div>
             )}
-
           </div>
         </main>
       </section>
