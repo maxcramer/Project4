@@ -15,7 +15,7 @@ function login(req, res, next) {
 
 function register(req, res, next) {
   User.create(req.body)
-    .then(user => createAndSendToken(req, res, `Created user ${user.email}`))
+    .then(user => createAndSendToken(user, res, `Created user ${user.email}`))
     .catch(next);
 }
 

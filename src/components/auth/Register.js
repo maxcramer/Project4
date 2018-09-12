@@ -6,8 +6,9 @@ class AuthRegister extends React.Component {
   state = {
     passwordHidden: true,
     username: 'Max',
-    email: 'max@email.com',
+    email: `max${Math.round(Math.random() * 1000)}@email.com`,
     password: 'pass',
+    passwordConfirmation: 'pass',
     errors: {}
   }
 
@@ -52,27 +53,51 @@ class AuthRegister extends React.Component {
               <input className="bars has-text-centered" name="email" placeholder="example@email.com" onChange={this.handleChange} value={this.state.email || ''} />
               <span style={{ color: 'red' }}>{this.state.errors.email}</span>
             </div>
+
             <div className="field">
               <label className="label">Username</label>
               <input className="bars has-text-centered" name="username" placeholder="e.g. Pete" onChange={this.handleChange} value={this.state.username || ''} />
               <span style={{ color: 'red' }}>{this.state.errors.username}</span>
             </div>
+
             <div className="field">
               <label className="label">Password</label>
               <input className="bars has-text-centered" name="password" type={this.state.passwordHidden ? 'password' : 'text'} placeholder="password" onChange={this.handleChange} value={this.state.password || ''} />
               <span style={{ color: 'red' }}>{this.state.errors.password}</span>
             </div>
+
             <div className="field">
               <label className="label">Password Confirmation</label>
               <input className="bars has-text-centered" name="passwordConfirmation" type={this.state.passwordHidden ? 'password' : 'text'} placeholder="Confirm your password" onChange={this.handleChange} value={this.state.passwordConfirmation || ''} />
               <span style={{ color: 'red' }}>{this.state.errors.passwordConfirmation}</span>
             </div>
+
             <div className="field">
               <button className="button is-danger is-rounded is-outlined" onClick={this.togglePasswordShow}>Show Password 👁</button>
             </div>
+
             {/* Needs to be dropdown menu! */}
-            <input name="boardType" placeholder="Please choose from an option below" onChange={this.handleChange} value={this.state.boardType} />
-            <input name="ridingStyle" placeholder="Please choose from an option below" onChange={this.handleChange} value={this.state.ridingStyle} />
+            <div className="field">
+              <label className="label">Please choose your Board bellow</label>
+              <select className="bars has-text-centered" name="boardType" placeholder="Please choose from an option below" onChange={this.handleChange} value={this.state.boardType} >
+                <option value="">Select from bellow 🔽</option>
+                <option value="OneWheel Original">OneWheel Original</option>
+                <option value="OneWheel Plus">OneWheel Plus</option>
+                <option value="OneWheel XR">OneWheel XR</option>
+              </select>
+            </div>
+
+            <div className="field">
+              <label className="label">Please choose prefered riding style bellow</label>
+              <select className="bars has-text-centered" name="ridingStyle" placeholder="Please choose from bellow 🔽" onChange={this.handleChange} value={this.state.ridingStyle} >
+                <option value="">Select from bellow 🔽</option>
+                <option value="Street">Street</option>
+                <option value="Off-Road">Off-Road</option>
+                <option value="Freestyle / Tricks">Freestyle / Trick</option>
+              </select>
+            </div>
+
+
             <div className="submitButton">
               <button className="button is-info is-rounded is-outlined">Submit</button>
             </div>

@@ -14,7 +14,14 @@ class Header extends React.Component {
 
   componentDidMount() { // sets all journeys onto the state?
     axios.get('/api/journeys')
-      .then(res => this.setState({ journeys: res.data, filteredJourneys: res.data }));
+      .then(res => this.setState({ journeys: res.data, filteredJourneys: res.data, userId: Auth.currentUserId() }));
+  }
+
+  componentDidUpdate() {
+    if(Auth.currentUserId() !== this.state.userId){
+      console.log('Current User ID has changed!' );
+      this.setState({ userId: Auth.currentUserId() });
+    }
   }
 
   sortJourneys = (journeys) => {
@@ -128,7 +135,7 @@ class Header extends React.Component {
                   }
                   {Auth.isAuthenticated() &&
                   <div className="navbar-item">
-                    <Link className="navbar-item" to={`/users/${Auth.currentUserId()}`}>Profile</Link>
+                    <Link className="navbar-item" to={`/users/${this.state.userId}`}>Profile</Link>
                   </div>
                   }
                   {Auth.isAuthenticated() &&

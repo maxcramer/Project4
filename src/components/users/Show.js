@@ -6,15 +6,16 @@ import Auth from '../../lib/Auth';
 class UsersShow extends React.Component {
   state = {}
 
-  deleteTag = (tagId) => {
-    return () => {
-      console.log(`Delete tag ${tagId}`);
-      const userId = this.props.match.params.id;
-      axios.delete(`/api/user/${userId}/tags/${tagId}`)
-        .then(res => this.setState({ user: res.data }))
-        .catch(err => console.log('Error Deleting.', err));
-    };
-  }
+  // deleteTag = (tagId) => {
+  //   return () => {
+  //     console.log(`Delete tag ${tagId}`);
+  //     const userId = this.props.match.params.id;
+  //     axios.delete(`/api/user/${userId}/tags/${tagId}`)
+  //       .then(res => this.setState({ user: res.data }))
+  //       .catch(err => console.log('Error Deleting.', err));
+  //   };
+  // }
+
 
   componentDidMount() {
     console.log('This is the props', this.props.match.params.id);
@@ -23,8 +24,8 @@ class UsersShow extends React.Component {
   }
 
   handleDelete = () => {
-    axios.delete(`/api/user/${this.props.match.params.id}`, Auth.bearerHeader())
-      .then(() => this.props.history.push('/user'));
+    axios.delete(`/api/users/${this.props.match.params.id}`, Auth.bearerHeader())
+      .then(() => this.props.history.push('/login'));
   }
 
   handleFollow = () => {
@@ -64,18 +65,26 @@ class UsersShow extends React.Component {
       <section>
         {user &&
             <div className="journeyIndex">
-              <div className="is-multiline userName">
+              <div className="userName">
                 <p className="label userName">{user.username}</p>
               </div>
-              <div className="imgDiv">
-                <img className="profilePic" src={user.profileImg} />
+              <div className="imgDiv columns">
+                <div className="column profileImages">
+                  <img className="profilePic column" src={user.profileImg} />
+                </div>
+                <div className="column profileImages">
+                  <p className="label">Board Image: </p>
+                  <img className="profileBoardImg column" src={user.boardImg} />
+                </div>
               </div>
-              <div className="followDiv">
-                <p className="title is-4 borderFix follow">Followers: {user.followers.length}</p>
-                <p className="title is-4 follow">Following: {user.following.length}</p>
+              <div className="followDiv has-text-centered columns">
+                <div className="column ">
+                  <p className="title is-4 borderFix follow">Followers: {user.followers.length}</p>
+                </div>
+                <div className="column">
+                  <p className="title is-4 follow">Following: {user.following.length}</p>
+                </div>
               </div>
-              <p className="label">Board Image: </p>
-              <img className="profileBoardImg" src={user.boardImg} />
               <div className="container">
                 <div className="profileText">
                   <p className="label">Email: {user.email}</p>

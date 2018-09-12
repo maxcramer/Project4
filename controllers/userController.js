@@ -43,9 +43,9 @@ function userUpdate(req, res, next) {
 }
 
 function userDelete(req, res, next) {
-  User.findById(req.params.userId)
+  User.findById(req.params.id)
     .then(user => user.remove())
-    .then(() => res.sendStatus(204))
+    .then(() => res.sendStatus(204)) // no content
     .catch(next);
 }
 

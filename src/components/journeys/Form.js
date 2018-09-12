@@ -51,11 +51,16 @@ function JourneyForm({ handleSubmit, handleChange, journey }) {
 
       <div className="field">
         <label className="label" htmlFor="boardRode">Board Rode on Journey</label>
-        <input className="input form" name="boardRode"
+        <select className="input form" name="boardRode"
           value={journey.boardRode || ''}
           placeholder="e.g. OneWheel Plus"
           onChange={handleChange}
-        />
+        >
+          <option value="">Please Select an option from bellow 🔽</option>
+          <option value="OneWheel Original">OneWheel Original</option>
+          <option value="OneWheel Plus">OneWheel Plus</option>
+          <option value="OneWheel XR">OneWheel XR</option>
+        </select>
       </div>
       <div className="submitButton">
         <button className="button is-info is-rounded is-outlined">Submit</button>

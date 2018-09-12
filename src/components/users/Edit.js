@@ -29,7 +29,7 @@ class UsersEdit extends React.Component {
     console.log('this.state is', this.state);
     return (
       <section>
-        <h2 className="title is-2">Edit Your Profile</h2>
+        <h2 className="title is-2 pad label">Edit Your Profile</h2>
         <UserForm
           handleSubmit={this.handleSubmit}
           handleChange={this.handleChange}

@@ -8,7 +8,6 @@ body {
   padding-top: 10px;
 }
 
-
 .bars {
   width: 500px;
   height: 75px;
@@ -42,7 +41,8 @@ body {
 }
 
 .navbar {
-  background-color: #02539D;
+  background-color: #02539D66;
+  font-size: 50px;
 }
 
 .navbar-burger {
@@ -58,16 +58,16 @@ body {
 }
 
 .navbar-item {
-  font-size: 25px;
+  font-size: 40px;
   color: white;
 }
 
 .navbar-menu {
-  background-color: #02539D;
+  background-color: #02539D66;
 }
 
 .journeyIndex {
-  background-color: #02539D;
+  background-color: #02539DAA;
   max-width: 90vw;
   margin-top: 50px;
   margin-left: 50px;
@@ -87,29 +87,42 @@ body {
   margin-top: 30px;
   margin-left: 30px;
   margin-right: 1px;
+  width: 300px;
 }
 
 .follow {
-  background-color: white;
+  background-color: #FFFA;
   border: solid 3px black;
-  width: 120px;
+  width: 200px;
+  height: 80px;
   margin-top: 60px;
+  margin-left: 110px;
+
 
 }
 
 .imgDiv {
-  float: left;
 }
 
 .followDiv {
-  float: left;
   margin-left: 20px;
+  height: 100px;
+  width: 150px;
+  padding-bottom: 150px;
+}
+
+.profileImages {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
 }
 
 .profileBoardImg {
   border-radius: 10%;
   padding-left: 20px;
-  max-height: 200px;
+  max-height: 300px;
+  min-height: 300px;
+  margin-right: 40px;
 }
 
 
@@ -142,7 +155,7 @@ body {
 }
 
 .form {
-  height: 50px;
+  height: 75px;
   font-size: 30px;
   border-radius: 30px;
 }

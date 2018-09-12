@@ -24,20 +24,30 @@ function UserForm({ handleSubmit, handleChange, user }) {
       <div className="field">
         {/* Add upload from device option */}
         <label className="label" htmlFor="boardType">Board Type</label>
-        <input className="input form" name="boardType"
+        <select className="input form" name="boardType"
           value={user.boardType || ''}
           placeholder="e.g. OneWheel Plus"
           onChange={handleChange}
-        />
+        >
+          <option value="">Please Select an option from bellow 🔽</option>
+          <option value="OneWheel Original">OneWheel Original</option>
+          <option value="OneWheel Plus">OneWheel Plus</option>
+          <option value="OneWheel XR">OneWheel XR</option>
+        </select>
       </div>
 
       <div className="field">
         <label className="label" htmlFor="ridingStyle">Riding Style</label>
-        <input className="input form" name="ridingStyle"
+        <select className="input form" name="ridingStyle"
           value={user.ridingStyle || ''}
           placeholder="e.g. Offroad"
           onChange={handleChange}
-        />
+        >
+          <option value="">Please select an option from bellow 🔽</option>
+          <option value="Street">Street</option>
+          <option value="Off-Road">Off-Road</option>
+          <option value="Freestyle / Tricks">Freestyle / Trick</option>
+        </select>
       </div>
 
       <div className="field">

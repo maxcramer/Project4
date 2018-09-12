@@ -8,7 +8,7 @@ const userSchema = new mongoose.Schema({
   profileImg: { type: String }, // allow user to upload image? Sort in front end
   boardType: { type: String, enum: [
     'OneWheel Original',
-    'Onewheel Plus',
+    'OneWheel Plus',
     'OneWheel XR'
   ]},
   boardImg: String,// allow user to upload image? Sort in front end
