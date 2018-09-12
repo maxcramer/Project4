@@ -21,18 +21,23 @@ class JourneysIndex extends React.Component {
     return(
       <section>
         <main>
-          { journeys && journeys.map(journey =>
-            <div className="columns is-multiline" key={journey._id}>
-              <Link to={`/journeys/${journey._id}`}
-                className="column is-10 card">
-                <h3 className="title is-3"
-                  style={{ color: 'steelblue' }}>
-                  {journey.journeyName}
-                </h3>
-                <img src={ journey.journeyImage }/>
-              </Link>
-            </div>
-          )}
+          <div className="field has-text-centered">
+            { journeys && journeys.map(journey =>
+              <div className="columns has-text-centered is-multiline journeyIndex" key={journey._id}>
+                <Link to={`/journeys/${journey._id}`}
+                  className="column is-10 padder">
+                  <h3 className="indexText">
+                    {journey.journeyName}
+                  </h3>
+                  <h3 className=" indexText">
+                    {journey.city}
+                  </h3>
+                  <img src={ journey.journeyImage }/>
+                </Link>
+              </div>
+            )}
+
+          </div>
         </main>
       </section>
     );

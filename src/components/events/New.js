@@ -25,7 +25,7 @@ class EventsNew extends React.Component {
     console.log('this.state is', this.state);
     return (
       <section>
-        <h2 className="title is-2">Create an Event</h2>
+        <h2 className="title is-1 label pad">Create an Event</h2>
         <EventForm
           handleSubmit={this.handleSubmit}
           handleChange={this.handleChange}

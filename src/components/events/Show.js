@@ -21,14 +21,21 @@ class EventsShow extends React.Component {
     return(
       <section>
         {event &&
-          <div className="has-text-centered">
-            <h2 className="title is-2">{event.eventName}</h2>
-            {/* <h2 className="title is-2">{event.startLocation}</h2> WONT RENDER WITH THIS, ARRAYS?*/}
-            <img src={event.eventImage} />
-            <p className="has-text-centered">Start time: {event.startTime}</p>
-            <p className="has-text-centered">End time: {event.endTime}</p>
-            {/* <p className="has-text-centered">{event.endLocation}</p> WONT RENDER WITH THIS, ARRAYS?*/}
-            <div className="columns buttons">
+          <div className="journeyIndex">
+            <div className="has-text-centered">
+              <h2 className="title is-1 eventText eventTitle">{event.eventName}</h2>
+              <img src={event.eventImage} />
+            </div>
+            <div className="journeyText">
+              {/* <h2 className="title is-2">{event.startLocation}</h2> WONT RENDER WITH THIS, ARRAYS?*/}
+              <p className="title is-2 eventText">Start time: {event.startTime}</p>
+              <p className="title is-2 eventText">Meet at: {event.startLocation}</p>
+              <p className="title is-2 eventText">Finish at: {event.endLocation}</p>
+              <p className="title is-2 eventText">End time: {event.endTime}</p>
+              <p className="title is-2 eventText">Organiser: {event.organiser}</p>
+              {/* <p className="has-text-centered">{event.endLocation}</p> WONT RENDER WITH THIS, ARRAYS?*/}
+            </div>
+            <div className="columns buttons has-text-centered haveaccount">
               <div className="column is-half">
                 <Link to={`/events/${event._id}/edit`} className="button is-warning is-rounded is-outlined">Edit</Link>
               </div>

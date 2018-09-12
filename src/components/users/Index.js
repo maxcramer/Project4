@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import _ from 'lodash';
+import Auth from '../../lib/Auth';
 
 
 class UsersIndex extends React.Component {
@@ -15,23 +16,25 @@ class UsersIndex extends React.Component {
         this.setState({ users: res.data });
       });
   }
+
   render() {
     const users = this.state.users || [];
 
     return(
       <section>
         <main>
-          { users && users.map(user =>
-            <div className="columns is-multiline" key={user._id}>
-              <Link to={`/users/${user._id}`}>
-                <img src={user.profileImg} />
-                <h3 className="title is-3"
-                  style={{ color: 'steelblue' }}>
-                  {user.username}
-                </h3>
-              </Link>
-            </div>
-          )}
+          <span>
+            { users && users.map(user =>
+              <div className=" is-multiline userIndexPad" key={user._id}>
+                <Link to={`/users/${user._id}`}>
+                  <h3 className="subtitle is-2 label">{user.username} </h3>
+                  <img className="profileImg" src={user.profileImg} /><img className="userIndexBI" src={user.boardImg}/>
+
+                </Link>
+                <hr/>
+              </div>
+            )}
+          </span>
         </main>
       </section>
     );

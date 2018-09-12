@@ -44,22 +44,41 @@ class AuthRegister extends React.Component {
 
   render() {
     return (
-      <section>
-        <form onSubmit={this.handleSubmit}>
-          <input name="email" placeholder="example@email.com" onChange={this.handleChange} value={this.state.email || ''} />
-          <span style={{ color: 'red' }}>{this.state.errors.email}</span>
-          <input name="username" placeholder="e.g. Pete" onChange={this.handleChange} value={this.state.username || ''} />
-          <span style={{ color: 'red' }}>{this.state.errors.username}</span>
-          <input name="password" type={this.state.passwordHidden ? 'password' : 'text'} placeholder="password" onChange={this.handleChange} value={this.state.password || ''} />
-          <span style={{ color: 'red' }}>{this.state.errors.password}</span>
-          <input name="passwordConfirmation" type={this.state.passwordHidden ? 'password' : 'text'} placeholder="Confirm your password" onChange={this.handleChange} value={this.state.passwordConfirmation || ''} />
-          <span style={{ color: 'red' }}>{this.state.errors.passwordConfirmation}</span>
-          {/* Needs to be dropdown menu! */}
-          <input name="boardType" placeholder="Please choose from an option below" onChange={this.handleChange} value={this.state.boardType} />
-          <input name="ridingStyle" placeholder="Please choose from an option below" onChange={this.handleChange} value={this.state.ridingStyle} />
-          <button>Submit</button>
-        </form>
-        <button onClick={this.togglePasswordShow}>👁</button>
+      <section className="regpadding">
+        <div className="has-text-centered ">
+          <form onSubmit={this.handleSubmit}>
+            <div className="field">
+              <label className="label">Email</label>
+              <input className="bars has-text-centered" name="email" placeholder="example@email.com" onChange={this.handleChange} value={this.state.email || ''} />
+              <span style={{ color: 'red' }}>{this.state.errors.email}</span>
+            </div>
+            <div className="field">
+              <label className="label">Username</label>
+              <input className="bars has-text-centered" name="username" placeholder="e.g. Pete" onChange={this.handleChange} value={this.state.username || ''} />
+              <span style={{ color: 'red' }}>{this.state.errors.username}</span>
+            </div>
+            <div className="field">
+              <label className="label">Password</label>
+              <input className="bars has-text-centered" name="password" type={this.state.passwordHidden ? 'password' : 'text'} placeholder="password" onChange={this.handleChange} value={this.state.password || ''} />
+              <span style={{ color: 'red' }}>{this.state.errors.password}</span>
+            </div>
+            <div className="field">
+              <label className="label">Password Confirmation</label>
+              <input className="bars has-text-centered" name="passwordConfirmation" type={this.state.passwordHidden ? 'password' : 'text'} placeholder="Confirm your password" onChange={this.handleChange} value={this.state.passwordConfirmation || ''} />
+              <span style={{ color: 'red' }}>{this.state.errors.passwordConfirmation}</span>
+            </div>
+            <div className="field">
+              <button className="button is-danger is-rounded is-outlined" onClick={this.togglePasswordShow}>Show Password 👁</button>
+            </div>
+            {/* Needs to be dropdown menu! */}
+            <input name="boardType" placeholder="Please choose from an option below" onChange={this.handleChange} value={this.state.boardType} />
+            <input name="ridingStyle" placeholder="Please choose from an option below" onChange={this.handleChange} value={this.state.ridingStyle} />
+            <div className="submitButton">
+              <button className="button is-info is-rounded is-outlined">Submit</button>
+            </div>
+            <p className="subtitle is-5 label haveaccount">Already have an account? <a href="/login">Click here</a> to login</p>
+          </form>
+        </div>
       </section>
     );
   }

@@ -21,18 +21,28 @@ class EventsIndex extends React.Component {
     return(
       <section>
         <main>
-          { events && events.map(event =>
-            <div className="columns is-multiline" key={event._id}>
-              <Link to={`/events/${event._id}`}
-                className="column is-10 card">
-                <h3 className="title is-3"
-                  style={{ color: 'steelblue' }}>
-                  {event.eventName}
-                </h3>
-                <img src={ event.eventImage }/>
-              </Link>
-            </div>
-          )}
+          <div className="field">
+            { events && events.map(event =>
+              <div className="columns is-multiline journeyIndex" key={event._id}>
+                <Link to={`/events/${event._id}`}
+                  className="column is-10 padder">
+                  <div className="has-text-centered">
+                    <img src={ event.eventImage }/>
+                  </div>
+                  <h3 className="indexText">
+                    {event.eventName}
+                  </h3>
+                  <h3 className="subtitle is-3 eventText">
+                    Meet at: {event.startLocation}
+                  </h3>
+                  <h3 className="subtitle is-3 eventText">
+                    Start Time: {event.startTime}
+                  </h3>
+                </Link>
+              </div>
+            )}
+
+          </div>
         </main>
       </section>
     );

@@ -40,9 +40,6 @@ Router.route('/users/:userId/journeys')
 Router.route('/users/:userId/journeys/:journeyId')
   .delete(journeysController.indexByUserDelete);
 
-// FOLLOW REQUEST
-Router.route('/users/:id/followers')
-  .post(secureRoutes, userController.addFollower);
 
 // USER CONTROL (FOLLOWING FUNCTIONS)
 Router.route('/users')
@@ -52,6 +49,9 @@ Router.route('/users/:id')
   .put(userController.update)
   .delete(userController.delete);
 
+// FOLLOW REQUEST
+Router.route('/users/:id/followers')
+  .post(secureRoutes, userController.addFollower);
 
 // TAGS
 Router.route('/users/:userId/tags')

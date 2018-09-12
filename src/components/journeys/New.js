@@ -25,7 +25,7 @@ class JourneysNew extends React.Component {
     console.log('this.state is', this.state);
     return (
       <section>
-        <h2 className="title is-2">Upload A Journey</h2>
+        <h2 className="title is-1 label pad">Upload A Journey</h2>
         <JourneyForm
           handleSubmit={this.handleSubmit}
           handleChange={this.handleChange}

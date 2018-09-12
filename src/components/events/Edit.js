@@ -29,7 +29,7 @@ class EventsEdit extends React.Component {
     console.log('this.state is', this.state);
     return (
       <section>
-        <h2 className="title is-2">Edit Event</h2>
+        <h2 className="title is-1 label pad padTop">Edit Event</h2>
         <EventForm
           handleSubmit={this.handleSubmit}
           handleChange={this.handleChange}

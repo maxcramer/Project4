@@ -8,6 +8,11 @@ class AuthLogin extends React.Component {
     passwordHidden: true
   }
 
+  togglePasswordShow = () => {
+    const passwordHidden = !this.state.passwordHidden;
+    this.setState({ passwordHidden });
+  }
+
   handleSubmit = event => {
     event.preventDefault();
     axios.post('/api/login', this.state)
@@ -25,11 +30,6 @@ class AuthLogin extends React.Component {
       });
   }
 
-  togglePasswordShow = () => {
-    const passwordHidden = !this.state.passwordHidden;
-    this.setState({ passwordHidden });
-  }
-
   handleChange = (event) => {
     const { target: { name, value } } = event;
     this.setState({ [name]: value });
@@ -39,11 +39,23 @@ class AuthLogin extends React.Component {
     return (
       <section>
         <form onSubmit={this.handleSubmit}>
-          <input name="email" placeholder="example@email.com" onChange={this.handleChange} value={this.state.email} />
-          <input name="password" type={this.state.passwordHidden ? 'password' : 'text'} placeholder="password" onChange={this.handleChange} value={this.state.password} />
-          <button>Submit</button>
+          <div className="field has-text-centered boxpadding">
+            <div className="field">
+              <label className="label" >Email</label>
+              <input className="bars has-text-centered" name="email" placeholder="example@email.com" onChange={this.handleChange} value={this.state.email} />
+            </div>
+            <div className="field">
+              <label className="label" >Password</label>
+              <input className="bars has-text-centered" name="password" type={this.state.passwordHidden ? 'password' : 'text'} placeholder="password" onChange={this.handleChange} value={this.state.password} />
+            </div>
+            <button className="button is-danger is-rounded is-outlined" onClick={this.togglePasswordShow}>Show Password 👁</button>
+            <div className="submitButton">
+              <button className="button is-info is-rounded is-outlined">Submit</button>
+            </div>
+            <p className="subtitle is-5 label noaccount">Don't have an account? <a href="/register">Click here</a> to sign up</p>
+          </div>
         </form>
-        <button onClick={this.togglePasswordShow}>👁</button>
+
       </section>
     );
   }
