@@ -1,7 +1,6 @@
 import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import _ from 'lodash';
 import Auth from '../../lib/Auth';
 
 class JourneysIndex extends React.Component {
@@ -15,7 +14,7 @@ class JourneysIndex extends React.Component {
         axios.get(`/api/users/${Auth.currentUserId()}`)
           .then(res => {
             console.log('This is the res.data', Auth.currentUserId());
-            this.setState({journeys: journeys, user: res.data}, () => console.log('This is the State', this.state));
+            this.setState({journeys: journeys, user: res.data});
           });
       });
   }
@@ -23,8 +22,10 @@ class JourneysIndex extends React.Component {
 
   render() {
     if(!this.state.journeys || !this.state.user) return null;
-    const journeys = this.state.journeys.filter(journey => this.state.user.following.filter(user => user.username === journey.username).length) || [];
-
+    const journeys = this.state.journeys.filter(journey => (
+      this.state.user.following.filter(user => user.username === journey.username).length) || []
+    );
+    console.log('This is the journeys', journeys);
     return(
       <section>
         <main>
