@@ -11,6 +11,7 @@ const tagsController = require('../controllers/tagsController');
 const eventController = require('../controllers/eventController');
 const userController = require('../controllers/userController');
 const secureRoutes = require('../lib/secureRoutes');
+const commentController = require('../controllers/commentController');
 
 
 
@@ -24,6 +25,12 @@ Router.route('/login')
   .post(authController.login);
 Router.route('/register')
   .post(authController.register);
+
+Router.route('/journeys/:journeyId/comments')
+  .post(commentController.create);
+
+Router.route('/journeys/:journeyId/comments/:commentId')
+  .delete(commentController.delete);
 
 // JOURNEYS
 Router.route('/journeys')

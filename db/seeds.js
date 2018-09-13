@@ -16,13 +16,13 @@ const journeyData = [
       {lat: 51.522008, lon: -0.071706, time: 1300},
       {lat: 51.522009, lon: -0.071707, time: 1300}
     ],
-    username: 'Max',
+    username: 'max',
     description: 'Trip down brick lane with some awesome bumps to jump!',
     distance: 0.6,
     boardRode: 'Onewheel Plus',
     journeyImage: 'https://i.imgur.com/6zE4bvy.jpg',
     comments: [
-      {username: 'Max', content: 'This is the best ride ever!'}
+      {username: 'max', content: 'This is the best ride ever!'}
     ]
   }
 ];

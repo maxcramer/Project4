@@ -30,6 +30,7 @@ function userIndex(req, res, next) {
 function userShow(req, res, next) {
   console.log(req.params.id);
   User.findById(req.params.id)
+    .populate('following')
     .then(user => res.json(user))
     .catch(next);
 }
