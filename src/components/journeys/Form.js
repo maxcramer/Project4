@@ -50,6 +50,15 @@ function JourneyForm({ handleSubmit, handleChange, journey }) {
       </div>
 
       <div className="field">
+        <label className="label" htmlFor="username">Your username</label>
+        <input className="input form" name="username"
+          value={journey.username || ''}
+          placeholder="e.g. Sandy"
+          onChange={handleChange}
+        />
+      </div>
+
+      <div className="field">
         <label className="label" htmlFor="boardRode">Board Rode on Journey</label>
         <select className="input form" name="boardRode"
           value={journey.boardRode || ''}

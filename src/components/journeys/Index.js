@@ -13,8 +13,7 @@ class JourneysIndex extends React.Component {
         journeys = res.data;
         axios.get(`/api/users/${Auth.currentUserId()}`)
           .then(res => {
-            console.log('This is the res.data', Auth.currentUserId());
-            this.setState({journeys: journeys, user: res.data});
+            this.setState({journeys: journeys, user: res.data}, () => console.log(this.state));
           });
       });
   }
@@ -22,9 +21,9 @@ class JourneysIndex extends React.Component {
 
   render() {
     if(!this.state.journeys || !this.state.user) return null;
-    const journeys = this.state.journeys.filter(journey => (
-      this.state.user.following.filter(user => user.username === journey.username).length) || []
-    );
+    const journeys = this.state.journeys.filter(journey =>
+      this.state.user.following.filter(user => user.username === journey.username).length
+    ) || [];
     console.log('This is the journeys', journeys);
     return(
       <section>
