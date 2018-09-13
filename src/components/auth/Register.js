@@ -5,10 +5,6 @@ import Auth from '../../lib/Auth';
 class AuthRegister extends React.Component {
   state = {
     passwordHidden: true,
-    username: 'Max',
-    email: `max${Math.round(Math.random() * 1000)}@email.com`,
-    password: 'pass',
-    passwordConfirmation: 'pass',
     errors: {}
   }
 
