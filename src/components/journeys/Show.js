@@ -31,6 +31,7 @@ class JourneysShow extends React.Component {
               <p className="title is-2 eventText">Description: {journey.description}</p>
               <p className="title is-2 eventText">Distance: {journey.distance}KM</p>
               <p className="title is-2 eventText">Board Rode: {journey.boardRode}</p>
+              <p className="title is-2 eventText">Uploaded By: {journey.username}</p>
             </div>
             <div className="columns buttons has-text-centered haveaccount">
               <div className="column is-half">
