@@ -40,7 +40,7 @@
 ### Process
 
 #### Original Idea / Sketches & Wireframes
-In this project we had been tasked to build a fully restful app using React Framework for the front end of the web application. I decided to build a social platform application for Onewheelers & eBoarders alike. This would allow users to follow other users, see what journeys they are going on and also attend ride along events. Please see wireframes bellow.
+In this project we had been tasked to build a fully restful app using React Framework for the front end of the web application. I decided to build a social platform application for Onewheel Riders & eBoarders alike. This would allow users to follow other users, see what journeys they are going on and also attend ride along events. Please see wireframes bellow.
 
 ##### Login
 <div style="display: flex"><img height="500px" width="30%" alt="Login Wireframe" src="https://i.imgur.com/yDt9kzM.png" />
@@ -59,3 +59,17 @@ In this project we had been tasked to build a fully restful app using React Fram
 
 ##### User Profile
 <div style="display: flex"><img height="500px" width="30%" alt="User Profile Wireframe" src="https://i.imgur.com/Ax0te8J.png" />
+
+#### Blockers & Bugs
+My biggest blocker was getting an id to add to an array, then to get those journeys associated with that users ID showing up only on the following users index's that were following the user who had added the new journeys.
+I was able to overcome this and work around this issue by working with programs such as Insomnia which would help me to see more clearly what was happening on the back end.
+
+#### Wins
+Getting the following feature was by biggest win during the project as it was also my biggest uphill battle. Getting this working was a real win in my eyes and have learnt a lot about social media platforms as well as how their inner workings are.
+
+### Future Features
+#### Tracking
+One aspect I would of love to got into this web application would have been a tracking option, that would drop a pin every 10 seconds on a map while you were riding, creating the rider a trackable journey that they could then upload to their followers indexes. I would approach this by using an API to take the users current location every ten seconds in a lat and a long array, then using an API such as Nominatim to help me plot those arrays onto a map. Unfortunately I ran out of time during the build and was unable to add this feature.
+
+#### Attending Events
+I had also planned to add an attending function, much like the follow function, but for events being planned by other users that you wished to attend. This would have worked similarly also to the tracking, where once a user clicks attending, their user ID would be added into an array called attending, then allowing other users to click on this attending list to see which other users are attending.
