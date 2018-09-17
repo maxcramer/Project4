@@ -41,3 +41,21 @@
 
 #### Original Idea / Sketches & Wireframes
 In this project we had been tasked to build a fully restful app using React Framework for the front end of the web application. I decided to build a social platform application for Onewheelers & eBoarders alike. This would allow users to follow other users, see what journeys they are going on and also attend ride along events. Please see wireframes bellow.
+
+##### Login
+<div style="display: flex"><img height="500px" width="50%" alt="Login Wireframe" src="https://i.imgur.com/yDt9kzM.png" />
+
+##### Register
+<div style="display: flex"><img height="500px" width="50%" alt="Register Wireframe" src="https://i.imgur.com/d4HzyyY.png" />
+
+##### Journeys Index
+<div style="display: flex"><img height="500px" width="50%" alt="Index Wireframe" src="https://i.imgur.com/mOf7i0e.png" />
+
+##### Journey Show
+<div style="display: flex"><img height="500px" width="50%" alt="Journey Show Wireframe" src="https://i.imgur.com/MauBc0C.png" />
+
+##### Event Show
+<div style="display: flex"><img height="500px" width="50%" alt="Event Show Wireframe" src="https://i.imgur.com/QttvHXF.png" />
+
+##### User Profile
+<div style="display: flex"><img height="500px" width="50%" alt="User Profile Wireframe" src="https://i.imgur.com/Ax0te8J.png" />
