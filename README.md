@@ -1,11 +1,9 @@
 ## GENERAL ASSEMBLY Project 4: FloatLife - For OneWheelers Everywhere! - Individual project
-
 ### [Click here to view FloatLife](https://floatlife.herokuapp.com/login)
 
 ### Technology Used During Build
 * React Frontend Framework (Java Script)
 * SCSS / CSS
-* HTML
 * Github
 * Node.js
 * HTML 5
