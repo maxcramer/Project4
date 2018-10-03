@@ -2,7 +2,7 @@
 ### [Click here to view FloatLife](https://floatlife.herokuapp.com/login)
 
 ### Technology Used During Build
-* React Frontend Framework (Java Script)
+* React Frontend Framework (JavaScript)
 * SCSS / CSS
 * Github
 * Node.js
@@ -64,6 +64,10 @@ I was able to overcome this and work around this issue by working with programs 
 
 #### Wins
 Getting the following feature was by biggest win during the project as it was also my biggest uphill battle. Getting this working was a real win in my eyes and have learnt a lot about social media platforms as well as how their inner workings are.
+
+#### Favourite Piece of Code
+The piece of code that I am most proud of was giving the users the ability to follow one another on the platform. For me, this made it feel like a real social media platform and was the start of giving interaction between one user and another.
+![Following Users Code](https://i.imgur.com/PvKN0qE.png)
 
 ### Future Features
 #### Tracking
