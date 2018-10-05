@@ -71,7 +71,7 @@ The piece of code that I am most proud of was giving the users the ability to fo
 
 ### Future Features
 #### Tracking
-One aspect I would of love to got into this web application would have been a tracking option, that would drop a pin every 10 seconds on a map while you were riding, creating the rider a trackable journey that they could then upload to their followers indexes. I would approach this by using an API to take the users current location every ten seconds in a lat and a long array, then using an API such as Nominatim to help me plot those arrays onto a map. Unfortunately I ran out of time during the build and was unable to add this feature.
+One aspect I would of love to have got into this web application would have been a tracking option, that would drop a pin every 10 seconds on a map while you were riding, creating the rider a trackable journey that they could then upload to their followers indexes. I would approach this by using an API to take the users current location every ten seconds in a lat and a long array, then using an API such as Nominatim to help me plot those arrays onto a map. Unfortunately I ran out of time during the build and was unable to add this feature.
 
 #### Attending Events
 I had also planned to add an attending function, much like the follow function, but for events being planned by other users that you wished to attend. This would have worked similarly also to the tracking, where once a user clicks attending, their user ID would be added into an array called attending, then allowing other users to click on this attending list to see which other users are attending.
